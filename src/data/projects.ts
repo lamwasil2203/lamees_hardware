@@ -85,8 +85,8 @@ export const projects: Project[] = [
     tags: ["Hardware"],
     excerpt: "From the Bottom of my Heart...",
     lead: "From the Bottom of my Heart...I love soldering and designing PCDs",
-    heroImage: "/images/projects/project-2/image1.JPG",
-    cardImage: "/images/projects/project-2/image1.JPG",
+    heroImage: "/images/projects/project-2/main.png",
+    cardImage: "/images/projects/project-2/main.png",
     sections: [
       {
         type: "overview",
@@ -101,17 +101,23 @@ export const projects: Project[] = [
         images: [
           {
             src: "/images/projects/project-2/kicad.png",
+            alt: "Circuit Design",
+            caption: "Circuit Design",
+            featured: true,
+
+          },
+          {
+            src: "/images/projects/project-2/side.png",
             alt: "Size of the PCB",
             caption: "Side View",
-            featured: true,
           },
           {
-            src: "/images/projects/project-2/image3.JPG",
-            alt: "Mistake !",
-            caption: "Caption text",
+            src: "/images/projects/project-2/mistake.png",
+            alt: "Mistake of the PCB",
+            caption: "Mistake",
           },
           {
-            src: "/images/projects/project-2/image4.JPG",
+            src: "/images/projects/project-2/image2.png",
             alt: "Solution of the PCB",
             caption: "Solution !",
           },
