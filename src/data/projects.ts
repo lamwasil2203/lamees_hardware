@@ -96,6 +96,7 @@ export const projects: Project[] = [
           "I started off by looking at a few PCB designs online to get a sense of what we will be working with, then I followed the videos that were given to us which were very helpful!",
         ],
       },
+
       {
         type: "gallery",
         images: [
@@ -122,6 +123,11 @@ export const projects: Project[] = [
             caption: "Solution !",
           },
         ],
+      },
+      {
+        type: "video",
+        label: "Demo",
+        videoSrc: "/images/projects/project-2/demo.mov",
       },
       {
         type: "reflection",

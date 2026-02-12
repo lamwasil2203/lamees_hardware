@@ -5,6 +5,7 @@ import { ProjectHero } from "@/components/project/ProjectHero";
 import { ContentSection } from "@/components/project/ContentSection";
 import { ImageGallery } from "@/components/project/ImageGallery";
 import { TakeawaysList } from "@/components/project/TakeawaysList";
+import { VideoSection } from "@/components/project/VideoSection";
 import { ProjectNavigation } from "@/components/project/ProjectNavigation";
 
 export function generateStaticParams() {
@@ -73,6 +74,12 @@ export default async function ProjectPage({
                       </p>
                     </blockquote>
                   </section>
+                </FadeIn>
+              );
+            case "video":
+              return (
+                <FadeIn key={i}>
+                  <VideoSection section={section} />
                 </FadeIn>
               );
             case "takeaways":

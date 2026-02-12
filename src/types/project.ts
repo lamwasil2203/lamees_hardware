@@ -12,13 +12,15 @@ export interface Takeaway {
 }
 
 export interface ContentSection {
-  type: "overview" | "gallery" | "reflection" | "takeaways";
+  type: "overview" | "gallery" | "reflection" | "takeaways" | "video";
   label?: string;
   paragraphs?: string[];
   largeParagraph?: string;
   images?: GalleryImage[];
   quote?: string;
   takeaways?: Takeaway[];
+  videoSrc?: string;
+  videoCaption?: string;
 }
 
 export interface Project {
