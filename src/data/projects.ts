@@ -127,7 +127,7 @@ export const projects: Project[] = [
       {
         type: "video",
         label: "Demo",
-        videoSrc: "/images/projects/project-2/demo.mov",
+        videoSrc: "/images/projects/project-2/demo.MOV",
       },
       {
         type: "reflection",
