@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600">
+  <!-- Background -->
+  <rect width="900" height="600" fill="#000814"/>
+
+  <!-- Outer maze wall -->
+  <rect x="18" y="18" width="864" height="564" fill="none" stroke="#3355FF" stroke-width="6" rx="6"/>
+
+  <!-- Top horizontal walls -->
+  <rect x="58" y="78" width="160" height="8" fill="#3355FF" rx="3"/>
+  <rect x="278" y="78" width="344" height="8" fill="#3355FF" rx="3"/>
+  <rect x="682" y="78" width="160" height="8" fill="#3355FF" rx="3"/>
+
+  <!-- Upper-left box -->
+  <rect x="58" y="118" width="80" height="8" fill="#3355FF" rx="3"/>
+  <rect x="58" y="118" width="8" height="82" fill="#3355FF" rx="3"/>
+  <rect x="58" y="192" width="80" height="8" fill="#3355FF" rx="3"/>
+  <rect x="130" y="118" width="8" height="82" fill="#3355FF" rx="3"/>
+
+  <rect x="200" y="118" width="120" height="8" fill="#3355FF" rx="3"/>
+  <rect x="200" y="118" width="8" height="82" fill="#3355FF" rx="3"/>
+  <rect x="200" y="192" width="120" height="8" fill="#3355FF" rx="3"/>
+  <rect x="312" y="118" width="8" height="82" fill="#3355FF" rx="3"/>
+
+  <!-- Upper-right box -->
+  <rect x="762" y="118" width="80" height="8" fill="#3355FF" rx="3"/>
+  <rect x="762" y="118" width="8" height="82" fill="#3355FF" rx="3"/>
+  <rect x="762" y="192" width="80" height="8" fill="#3355FF" rx="3"/>
+  <rect x="834" y="118" width="8" height="82" fill="#3355FF" rx="3"/>
+
+  <rect x="580" y="118" width="120" height="8" fill="#3355FF" rx="3"/>
+  <rect x="580" y="118" width="8" height="82" fill="#3355FF" rx="3"/>
+  <rect x="580" y="192" width="120" height="8" fill="#3355FF" rx="3"/>
+  <rect x="692" y="118" width="8" height="82" fill="#3355FF" rx="3"/>
+
+  <!-- Ghost house (center) -->
+  <rect x="340" y="200" width="220" height="120" fill="none" stroke="#FF69B4" stroke-width="4" rx="4"/>
+  <rect x="415" y="200" width="70" height="6" fill="#FFB8FF"/>
+
+  <!-- Middle walls -->
+  <rect x="58" y="278" width="200" height="8" fill="#3355FF" rx="3"/>
+  <rect x="642" y="278" width="200" height="8" fill="#3355FF" rx="3"/>
+
+  <!-- Lower-left box -->
+  <rect x="58" y="360" width="80" height="8" fill="#3355FF" rx="3"/>
+  <rect x="58" y="360" width="8" height="82" fill="#3355FF" rx="3"/>
+  <rect x="58" y="434" width="80" height="8" fill="#3355FF" rx="3"/>
+  <rect x="130" y="360" width="8" height="82" fill="#3355FF" rx="3"/>
+
+  <rect x="200" y="360" width="120" height="8" fill="#3355FF" rx="3"/>
+  <rect x="200" y="360" width="8" height="82" fill="#3355FF" rx="3"/>
+  <rect x="200" y="434" width="120" height="8" fill="#3355FF" rx="3"/>
+  <rect x="312" y="360" width="8" height="82" fill="#3355FF" rx="3"/>
+
+  <!-- Lower-right box -->
+  <rect x="762" y="360" width="80" height="8" fill="#3355FF" rx="3"/>
+  <rect x="762" y="360" width="8" height="82" fill="#3355FF" rx="3"/>
+  <rect x="762" y="434" width="80" height="8" fill="#3355FF" rx="3"/>
+  <rect x="834" y="360" width="8" height="82" fill="#3355FF" rx="3"/>
+
+  <rect x="580" y="360" width="120" height="8" fill="#3355FF" rx="3"/>
+  <rect x="580" y="360" width="8" height="82" fill="#3355FF" rx="3"/>
+  <rect x="580" y="434" width="120" height="8" fill="#3355FF" rx="3"/>
+  <rect x="692" y="360" width="8" height="82" fill="#3355FF" rx="3"/>
+
+  <!-- Bottom walls -->
+  <rect x="58" y="480" width="160" height="8" fill="#3355FF" rx="3"/>
+  <rect x="278" y="480" width="344" height="8" fill="#3355FF" rx="3"/>
+  <rect x="682" y="480" width="160" height="8" fill="#3355FF" rx="3"/>
+
+  <!-- Dots row -->
+  <circle cx="44" cy="300" r="7" fill="#FFD700"/>
+  <circle cx="152" cy="300" r="5" fill="#FFD700"/>
+  <circle cx="222" cy="300" r="5" fill="#FFD700"/>
+  <circle cx="292" cy="300" r="5" fill="#FFD700"/>
+  <circle cx="362" cy="300" r="5" fill="#FFD700"/>
+  <circle cx="432" cy="300" r="5" fill="#FFD700"/>
+  <circle cx="502" cy="300" r="5" fill="#FFD700"/>
+  <circle cx="572" cy="300" r="5" fill="#FFD700"/>
+  <circle cx="642" cy="300" r="5" fill="#FFD700"/>
+  <circle cx="712" cy="300" r="5" fill="#FFD700"/>
+  <circle cx="856" cy="300" r="7" fill="#FFD700"/>
+
+  <!-- Power pellets -->
+  <circle cx="44" cy="100" r="11" fill="#FFD700"/>
+  <circle cx="856" cy="100" r="11" fill="#FFD700"/>
+  <circle cx="44" cy="500" r="11" fill="#FFD700"/>
+  <circle cx="856" cy="500" r="11" fill="#FFD700"/>
+
+  <!-- Pac-Man (mouth facing right) -->
+  <path d="M155,300 L183,278 A32,32 0 1,0 183,322 Z" fill="#FFD700"/>
+
+  <!-- Ghost Blinky (red) -->
+  <g transform="translate(430,228)">
+    <path d="M0,42 Q0,0 20,0 Q40,0 40,42 Q34,36 28,42 Q22,36 20,42 Q18,36 12,42 Q6,36 0,42 Z" fill="#FF0000"/>
+    <circle cx="13" cy="17" r="7" fill="white"/><circle cx="14" cy="18" r="3" fill="#111"/>
+    <circle cx="27" cy="17" r="7" fill="white"/><circle cx="28" cy="18" r="3" fill="#111"/>
+  </g>
+  <!-- Ghost Pinky -->
+  <g transform="translate(480,228)">
+    <path d="M0,42 Q0,0 20,0 Q40,0 40,42 Q34,36 28,42 Q22,36 20,42 Q18,36 12,42 Q6,36 0,42 Z" fill="#FFB8FF"/>
+    <circle cx="13" cy="17" r="7" fill="white"/><circle cx="14" cy="18" r="3" fill="#111"/>
+    <circle cx="27" cy="17" r="7" fill="white"/><circle cx="28" cy="18" r="3" fill="#111"/>
+  </g>
+
+  <!-- Title text -->
+  <text x="450" y="46" text-anchor="middle" fill="#FFFFFF" font-family="Courier New, monospace" font-size="13" letter-spacing="6" opacity="0.6">HIGH SCORE: 9 9 9 9</text>
+  <text x="450" y="562" text-anchor="middle" fill="#FFD700" font-family="Courier New, monospace" font-size="22" font-weight="bold" letter-spacing="4">PROJECT  03</text>
+</svg>
