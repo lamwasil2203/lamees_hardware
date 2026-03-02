@@ -52,6 +52,23 @@ A custom heart-shaped PCB designed in KiCad and fabricated from scratch. The boa
 
 ---
 
+### Project 3 — ESP32 Pac-Man Arcade
+
+A Pac-Man game built on an ESP32 microcontroller, displayed on a small screen. The project combines embedded C++ firmware with custom hardware wiring, and the portfolio page features a full Pac-Man themed UI — including a loading screen where Pac-Man eats dots before the page appears.
+
+![ESP32 Pac-Man project](public/images/projects/project-3/image.jpg)
+
+**Materials:**
+- ESP32 microcontroller
+- Display screen
+- Wiring & breadboard / custom PCB
+
+**Firmware:** [github.com/lamwasil2203/esp32_pacman](https://github.com/lamwasil2203/esp32_pacman)
+
+**Demo video:** [mine.MOV](public/images/projects/project-3/mine.MOV)
+
+---
+
 ## Installation & Usage
 
 ### Prerequisites
@@ -101,7 +118,8 @@ src/
 public/
 └── images/projects/        # Project images organized by slug
     ├── project-1/          # Soldering sculpture photos
-    └── project-2/          # Heart PCB photos + demo video
+    ├── project-2/          # Heart PCB photos + demo video
+    └── project-3/          # ESP32 Pac-Man Example + demo video
 ```
 
 ### Adding a New Project

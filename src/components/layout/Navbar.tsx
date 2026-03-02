@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 export function Navbar() {
   const pathname = usePathname();
   const isProjectPage = pathname.startsWith("/projects/");
+  const isPacManPage = pathname === "/projects/project-3";
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -16,6 +17,8 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  if (isPacManPage) return null;
 
   return (
     <nav
