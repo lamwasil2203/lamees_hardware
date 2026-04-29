@@ -77,77 +77,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "project-3",
-    number: "03",
-    title: "Level Up: Embedded Arcade Project",
-    date: "March 2026",
-    dateShort: "Mar 2026",
-    tags: ["Hardware", "Software"],
-    excerpt: "PLAYER 1 — INSERT COIN TO CONTINUE... A deep-dive into embedded systems, where circuits become gameplay and hardware becomes play.",
-    lead: "Welcome to the arcade. This project explores the intersection of embedded systems and interactive design — where soldering meets software and every bug is just a lost life.",
-    heroImage: "/images/projects/project-3/hero.svg",
-    cardImage: "/images/projects/project-3/hero.svg",
-    sections: [
-      {
-        type: "overview",
-        label: "Level 1: Overview",
-        largeParagraph:
-          "The goal of this project was to explore how hardware and software can come together to create something creative and fun.",
-        paragraphs: [
-          "I was able to dive into my imagination, and when I first saw our ESP32 displays, I instantly thought of PACMAN",
-        ],
-      },
-      {
-        type: "video",
-        label: "Demo",
-        videoSrc: "/images/projects/project-3/mine.mp4",
-      },
-      {
-        type: "reflection",
-        label: "Player Reflection",
-        quote:
-          "Every project feels like a new level — harder than the last, but also more rewarding. This one pushed me to think about the creative and software aspects of Embedding Systems",
-      },
-      {
-        type: "takeaways",
-        label: "Power Pellets",
-        takeaways: [
-          {
-            label: "Challenge",
-            title: "Challenge:",
-            description:
-              "The biggest challenge was how I can make the PACMAN win the game, this was based solely on randomness, I tired to slow down the ghosts and give the pacman more lives (3 lives).",
-          },
-          {
-            label: "Learning",
-            title: "Learning:",
-            description:
-              "Trying to figure out how to make a non-interactive 'game' work on the ESP32 and another learning curve was learning how to use Platform.io, which was a slight stepper challenge than I expected",
-          },
-          {
-            label: "Surprise",
-            title: "Surprise:",
-            description:
-              "How satisfying it is when physical hardware responds to your code. There is no abstraction layer hiding what is really happening !",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    slug: "project-4",
-    number: "04",
-    title: "Keyboard Project",
-    date: "April 2026",
-    dateShort: "Apr 2026",
-    tags: ["Hardware"],
-    excerpt: "A custom keyboard build — from scratch, one key at a time.",
-    lead: "A custom keyboard build — from scratch, one key at a time.",
-    heroImage: "/images/projects/project-4/IMG_8820.jpg",
-    cardImage: "/images/projects/project-4/IMG_8820.jpg",
-    sections: [],
-  },
-  {
     slug: "project-2",
     number: "02",
     title: "Heart PCB Project",
@@ -227,5 +156,76 @@ export const projects: Project[] = [
         ],
       },
     ],
+  },
+  {
+    slug: "project-3",
+    number: "03",
+    title: "Level Up: Embedded Arcade Project",
+    date: "March 2026",
+    dateShort: "Mar 2026",
+    tags: ["Hardware", "Software"],
+    excerpt: "PLAYER 1 — INSERT COIN TO CONTINUE... A deep-dive into embedded systems, where circuits become gameplay and hardware becomes play.",
+    lead: "Welcome to the arcade. This project explores the intersection of embedded systems and interactive design — where soldering meets software and every bug is just a lost life.",
+    heroImage: "/images/projects/project-3/hero.svg",
+    cardImage: "/images/projects/project-3/hero.svg",
+    sections: [
+      {
+        type: "overview",
+        label: "Level 1: Overview",
+        largeParagraph:
+          "The goal of this project was to explore how hardware and software can come together to create something creative and fun.",
+        paragraphs: [
+          "I was able to dive into my imagination, and when I first saw our ESP32 displays, I instantly thought of PACMAN",
+        ],
+      },
+      {
+        type: "video",
+        label: "Demo",
+        videoSrc: "/images/projects/project-3/mine.mp4",
+      },
+      {
+        type: "reflection",
+        label: "Player Reflection",
+        quote:
+          "Every project feels like a new level — harder than the last, but also more rewarding. This one pushed me to think about the creative and software aspects of Embedding Systems",
+      },
+      {
+        type: "takeaways",
+        label: "Power Pellets",
+        takeaways: [
+          {
+            label: "Challenge",
+            title: "Challenge:",
+            description:
+              "The biggest challenge was how I can make the PACMAN win the game, this was based solely on randomness, I tired to slow down the ghosts and give the pacman more lives (3 lives).",
+          },
+          {
+            label: "Learning",
+            title: "Learning:",
+            description:
+              "Trying to figure out how to make a non-interactive 'game' work on the ESP32 and another learning curve was learning how to use Platform.io, which was a slight stepper challenge than I expected",
+          },
+          {
+            label: "Surprise",
+            title: "Surprise:",
+            description:
+              "How satisfying it is when physical hardware responds to your code. There is no abstraction layer hiding what is really happening !",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "project-4",
+    number: "04",
+    title: "Keyboard Project",
+    date: "April 2026",
+    dateShort: "Apr 2026",
+    tags: ["Hardware"],
+    excerpt: "A custom keyboard build — from scratch, one key at a time.",
+    lead: "A custom keyboard build — from scratch, one key at a time.",
+    heroImage: "/images/projects/project-4/IMG_8820.jpg",
+    cardImage: "/images/projects/project-4/IMG_8820.jpg",
+    sections: [],
   },
 ];
