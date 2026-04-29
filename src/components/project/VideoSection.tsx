@@ -16,7 +16,6 @@ export function VideoSection({ section }: VideoSectionProps) {
           className="w-full rounded-sm border-2 border-border"
           preload="metadata"
         >
-          <source src={section.videoSrc} type="video/quicktime" />
           <source src={section.videoSrc} type="video/mp4" />
           Your browser does not support the video tag.
         </video>

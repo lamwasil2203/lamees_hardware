@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { ProjectNavigation } from "@/components/project/ProjectNavigation";
 import { getAdjacentProjects } from "@/lib/projects";
@@ -8,49 +9,46 @@ export const metadata: Metadata = {
   description: "A custom keyboard build — from scratch, one key at a time.",
 };
 
-function VideoItem({
-  src,
-  label,
-  subtitle,
-}: {
-  src: string;
-  label?: string;
-  subtitle?: string;
-}) {
+function Section({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div className="mb-12">
-      {label && (
-        <p className="font-mono text-[0.75rem] tracking-[2px] uppercase text-secondary mb-1">
-          {label}
-        </p>
+    <section className="grid grid-cols-[180px_1fr] gap-12 mb-16 max-md:grid-cols-1 max-md:gap-8">
+      <div className="font-mono text-[0.75rem] font-bold tracking-[2px] uppercase text-accent sticky top-[120px] self-start max-md:static">
+        {label}
+      </div>
+      <div>{children}</div>
+    </section>
+  );
+}
+
+function GridImage({ src, alt, caption, featured }: { src: string; alt: string; caption?: string; featured?: boolean }) {
+  return (
+    <div className="border-2 border-border overflow-hidden bg-border">
+      <div className={`relative ${featured ? "aspect-video" : "aspect-[4/3]"}`}>
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          className="object-cover"
+          sizes={featured ? "100vw" : "(max-width: 968px) 100vw, 50vw"}
+        />
+      </div>
+      {caption && (
+        <p className="py-3 px-4 text-[0.9rem] text-secondary italic bg-white">{caption}</p>
       )}
-      {subtitle && (
-        <p className="font-body text-[1.3rem] font-semibold text-text mb-4">
-          {subtitle}
-        </p>
-      )}
-      <video
-        controls
-        className="w-full rounded-sm border-2 border-border"
-        preload="metadata"
-      >
-        <source src={src} type="video/quicktime" />
-        <source src={src} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
     </div>
   );
 }
 
-function ImageItem({ src, alt }: { src: string; alt: string }) {
+function VideoItem({ src, caption }: { src: string; caption?: string }) {
   return (
-    <div className="mb-12">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={src}
-        alt={alt}
-        className="w-full rounded-sm border-2 border-border"
-      />
+    <div className="border-2 border-border overflow-hidden">
+      <video controls className="w-full block" preload="metadata">
+        <source src={src} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      {caption && (
+        <p className="py-3 px-4 text-[0.9rem] text-secondary italic bg-white">{caption}</p>
+      )}
     </div>
   );
 }
@@ -60,8 +58,18 @@ export default function KeyboardProjectPage() {
 
   return (
     <article className="pt-20">
-      {/* Header */}
+      {/* Hero */}
       <header className="max-w-[1400px] mx-auto pt-16 pb-0 px-12 max-md:px-8">
+        <div className="w-full h-[60vh] min-h-[400px] max-h-[700px] overflow-hidden mb-12 border-2 border-border relative max-md:h-[50vh] max-sm:h-[40vh] max-sm:min-h-[300px]">
+          <Image
+            src="/images/projects/project-4/IMG_8820.jpg"
+            alt="Keyboard Project hero"
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+          />
+        </div>
         <div className="max-w-[900px] mx-auto">
           <div className="flex gap-8 items-center mb-8 font-mono max-md:flex-col max-md:gap-6 max-md:items-start">
             <span className="font-mono text-[2rem] font-bold text-accent leading-none max-md:text-[4rem]">
@@ -98,42 +106,22 @@ export default function KeyboardProjectPage() {
         </div>
       </header>
 
-      {/* Media content */}
+      {/* Content */}
       <div className="max-w-[900px] mx-auto px-12 pb-24 pt-16 max-md:px-8">
 
-        {/* IMG_8796 – IMG_8800 */}
-        <FadeIn><ImageItem src="/images/projects/project-4/IMG_8796.jpg" alt="Keyboard build IMG_8796" /></FadeIn>
-        <FadeIn><ImageItem src="/images/projects/project-4/IMG_8797.jpg" alt="Keyboard build IMG_8797" /></FadeIn>
-        <FadeIn><ImageItem src="/images/projects/project-4/IMG_8798.jpg" alt="Keyboard build IMG_8798" /></FadeIn>
-        <FadeIn><ImageItem src="/images/projects/project-4/IMG_8799.jpg" alt="Keyboard build IMG_8799" /></FadeIn>
-        <FadeIn><ImageItem src="/images/projects/project-4/IMG_8800.jpg" alt="Keyboard build IMG_8800" /></FadeIn>
-
-        {/* IMG_8801 – IMG_8803 */}
-        <FadeIn><VideoItem src="/images/projects/project-4/IMG_8801.MOV" /></FadeIn>
-        <FadeIn><VideoItem src="/images/projects/project-4/IMG_8802.MOV" /></FadeIn>
-        <FadeIn><VideoItem src="/images/projects/project-4/IMG_8803.MOV" /></FadeIn>
-
-        {/* IMG_8807.MOV — labeled */}
         <FadeIn>
-          <VideoItem
-            src="/images/projects/project-4/IMG_8807.MOV"
-            label="(IMG_8807.MOV)"
-            subtitle="Keyboard Project"
-          />
+          <Section label="Overview">
+            <p className="text-[1.1rem] leading-[1.7] text-secondary font-body mb-4">
+              This is an attempt to make a keyboard that produces sounds for different moods. The idea started with wanting to place copper tape underneath the keys, and I also brought some magnets so that each keyboard pin could move up and down with a satisfying click — but the magnets did not work.
+            </p>
+            <p className="text-[1.1rem] leading-[1.7] text-secondary font-body">
+              Then when I placed the copper tape on the bottom of the keys, that did not work either. So I moved the copper tape to the top of the keys, and that is what you see here.
+            </p>
+          </Section>
         </FadeIn>
 
-        {/* Text box */}
         <FadeIn>
-          <section className="bg-white border-2 border-border p-8 mb-16 max-sm:px-6">
-            <div className="font-mono text-[0.75rem] font-bold tracking-[2px] uppercase text-accent mb-6">
-              About This Project
-            </div>
-            <p className="text-[1.1rem] leading-[1.7] text-text font-normal font-body mb-6">
-              This is an attempt to make a keyboard that produces sounds for different moods. The idea started with wanting to place copper tape underneath the keys, and I also brought some magnets so that each keyboard pin could move up and down with a satisfying click — but the magnets did not work. Then when I placed the copper tape on the bottom of the keys, that did not work either. So I moved the copper tape to the top of the keys, and that is what you see here.
-            </p>
-            <div className="font-mono text-[0.75rem] font-bold tracking-[2px] uppercase text-accent mb-4">
-              Key Mapping
-            </div>
+          <Section label="Key Mapping">
             <div className="overflow-x-auto">
               <table className="w-full font-mono text-[0.9rem] border-collapse">
                 <thead>
@@ -164,24 +152,61 @@ export default function KeyboardProjectPage() {
                 </tbody>
               </table>
             </div>
-          </section>
+          </Section>
         </FadeIn>
 
-        {/* IMG_8808 – IMG_8820 */}
-        <FadeIn><ImageItem src="/images/projects/project-4/IMG_8808.jpg" alt="Keyboard build IMG_8808" /></FadeIn>
-        <FadeIn><ImageItem src="/images/projects/project-4/IMG_8811.jpg" alt="Keyboard build IMG_8811" /></FadeIn>
-        <FadeIn><ImageItem src="/images/projects/project-4/IMG_8812.jpg" alt="Keyboard build IMG_8812" /></FadeIn>
-        <FadeIn><ImageItem src="/images/projects/project-4/IMG_8813.jpg" alt="Keyboard build IMG_8813" /></FadeIn>
-        <FadeIn><ImageItem src="/images/projects/project-4/IMG_8814.jpg" alt="Keyboard build IMG_8814" /></FadeIn>
-        <FadeIn><ImageItem src="/images/projects/project-4/IMG_8815.jpg" alt="Keyboard build IMG_8815" /></FadeIn>
-        <FadeIn><ImageItem src="/images/projects/project-4/IMG_8816.jpg" alt="Keyboard build IMG_8816" /></FadeIn>
-        <FadeIn><ImageItem src="/images/projects/project-4/IMG_8819.jpg" alt="Keyboard build IMG_8819" /></FadeIn>
-        <FadeIn><ImageItem src="/images/projects/project-4/IMG_8820.jpg" alt="Keyboard build IMG_8820" /></FadeIn>
+        <FadeIn>
+          <Section label="Build">
+            <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
+              <GridImage src="/images/projects/project-4/IMG_8796.jpg" alt="Early build stage" />
+              <GridImage src="/images/projects/project-4/IMG_8797.jpg" alt="Keyboard wiring" />
+              <GridImage src="/images/projects/project-4/IMG_8798.jpg" alt="Keyboard build" />
+              <GridImage src="/images/projects/project-4/IMG_8799.jpg" alt="Keyboard build" />
+              <div className="col-span-2 max-md:col-span-1">
+                <GridImage src="/images/projects/project-4/IMG_8800.jpg" alt="Keyboard build overview" featured />
+              </div>
+            </div>
+          </Section>
+        </FadeIn>
 
-        {/* IMG_8824 – IMG_8826 */}
-        <FadeIn><VideoItem src="/images/projects/project-4/IMG_8824.MOV" /></FadeIn>
-        <FadeIn><VideoItem src="/images/projects/project-4/IMG_8825.MOV" /></FadeIn>
-        <FadeIn><VideoItem src="/images/projects/project-4/IMG_8826.MOV" /></FadeIn>
+        <FadeIn>
+          <Section label="Early Tests">
+            <div className="flex flex-col gap-6">
+              <VideoItem src="/images/projects/project-4/IMG_8801.mp4" caption="First touch test" />
+              <VideoItem src="/images/projects/project-4/IMG_8802.mp4" caption="Second test" />
+              <VideoItem src="/images/projects/project-4/IMG_8803.mp4" caption="Third test" />
+            </div>
+          </Section>
+        </FadeIn>
+
+        <FadeIn>
+          <Section label="Assembly">
+            <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
+              <GridImage src="/images/projects/project-4/IMG_8808.jpg" alt="Assembly" />
+              <GridImage src="/images/projects/project-4/IMG_8811.jpg" alt="Assembly" />
+              <GridImage src="/images/projects/project-4/IMG_8812.jpg" alt="Assembly" />
+              <GridImage src="/images/projects/project-4/IMG_8813.jpg" alt="Assembly" />
+              <GridImage src="/images/projects/project-4/IMG_8814.jpg" alt="Assembly" />
+              <GridImage src="/images/projects/project-4/IMG_8815.jpg" alt="Assembly" />
+              <GridImage src="/images/projects/project-4/IMG_8816.jpg" alt="Assembly" />
+              <GridImage src="/images/projects/project-4/IMG_8819.jpg" alt="Assembly" />
+              <div className="col-span-2 max-md:col-span-1">
+                <GridImage src="/images/projects/project-4/IMG_8820.jpg" alt="Final keyboard" caption="The finished keyboard" featured />
+              </div>
+            </div>
+          </Section>
+        </FadeIn>
+
+        <FadeIn>
+          <Section label="Demo">
+            <div className="flex flex-col gap-6">
+              <VideoItem src="/images/projects/project-4/IMG_8807.mp4" caption="Keyboard in action" />
+              <VideoItem src="/images/projects/project-4/IMG_8824.mp4" />
+              <VideoItem src="/images/projects/project-4/IMG_8825.mp4" />
+              <VideoItem src="/images/projects/project-4/IMG_8826.mp4" />
+            </div>
+          </Section>
+        </FadeIn>
 
       </div>
 

@@ -100,7 +100,7 @@ export const projects: Project[] = [
       {
         type: "video",
         label: "Demo",
-        videoSrc: "/images/projects/project-3/mine.MOV",
+        videoSrc: "/images/projects/project-3/mine.mp4",
       },
       {
         type: "reflection",
@@ -198,7 +198,7 @@ export const projects: Project[] = [
       {
         type: "video",
         label: "Demo",
-        videoSrc: "/images/projects/project-2/demo.MOV",
+        videoSrc: "/images/projects/project-2/demo.mp4",
       },
       {
         type: "reflection",
